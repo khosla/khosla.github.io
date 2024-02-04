@@ -1,8 +1,7 @@
 ---
 layout: post
-date: 2023-09-22 
+date: 2024-02-04 
 inline: true
 ---
 
-Check out my tutorial (together with Luis Galárraga
-) on [Explainable GraphML](https://drive.google.com/file/d/1ItLOrxbC5SkP2BF4kkc_m7R55GMmkNfd/view) presented at ECML 2023
+Join us in Delft on 8-9 th February for the first workshop on the [interplay of explainability and privacy in AI](https://www.delftdesignforvalues.nl/event/workshop-series-on-values-and-value-conflicts-navigating-the-interplay-of-explainability-and-privacy-in-ai/)
