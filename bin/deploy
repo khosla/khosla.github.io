@@ -41,27 +41,34 @@ fi
 # Build site
 bundle exec jekyll build
 
-# Create a temporary deploy dir
+# Use a temporary clean folder for gh-pages content
 TEMP_DIR=$(mktemp -d)
 cp -R _site/* "$TEMP_DIR"
 
-# Switch to deploy branch
+# Switch to deploy branch (or create it)
 git fetch origin $DEPLOY_BRANCH || true
 git checkout --orphan $DEPLOY_BRANCH
 
-# Remove all files (except .git)
+# Remove everything in the working tree
 git rm -rf . > /dev/null 2>&1 || true
+
+# Copy the built site into root of the gh-pages branch
 cp -R "$TEMP_DIR"/* .
-rm -rf "$TEMP_DIR"
+
+# Just in case, delete heavy runtime files
+rm -rf vendor/
 
 # Commit and push
 git add -A
 git commit --allow-empty -m "Deploy $(date '+%Y-%m-%d %H:%M:%S') [ci skip]"
 
+# Only push if NO_PUSH is not set
 if [ -z "$NO_PUSH" ]; then
   git push -f origin $DEPLOY_BRANCH
 fi
 
-# Switch back
+# Switch back to original branch
 git checkout "$SRC_BRANCH"
+
 echo "Deployed successfully."
+
