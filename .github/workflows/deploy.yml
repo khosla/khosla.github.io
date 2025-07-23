@@ -1,32 +1,28 @@
-name: Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - master
       - main
-  pull_request:
-    branches:
       - master
-      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout source
       uses: actions/checkout@v4
 
-    - name: Install ImageMagick
+    - name: Install ImageMagick (required by jekyll-imagemagick)
       run: sudo apt-get update && sudo apt-get install -y imagemagick
 
-    - name: Setup Ruby
+    - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.2'
 
-    - name: Enable bundler cache
+    - name: Cache Ruby gems
       uses: actions/cache@v4
       with:
         path: vendor/bundle
@@ -43,24 +39,14 @@ jobs:
         npm install -g mermaid.cli
 
     - name: Build Jekyll site
-      run: bundle exec jekyll build
-
-    - name: Setup deploy options
-      id: setup
       run: |
-        git config --global user.name "GitHub Action"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        if [[ ${GITHUB_REF} == refs/pull/*/merge ]]; then
-          echo "NO_PUSH=--no-push" >> $GITHUB_ENV
-          echo "SRC_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
-        elif [[ ${GITHUB_REF} == refs/heads/* ]]; then
-          echo "SRC_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
-        fi
-        echo "DEPLOY_BRANCH=gh-pages" >> $GITHUB_ENV
+        bundle exec jekyll clean
+        bundle exec jekyll build
 
-    - name: Deploy site using bin/deploy
-      run: |
-        yes | bundle exec bin/deploy --verbose ${NO_PUSH} \
-          --src ${SRC_BRANCH} \
-          --deploy ${DEPLOY_BRANCH}
-
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site
+        publish_branch: gh-pages
+        force_orphan: true
