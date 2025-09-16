@@ -1,8 +1,7 @@
-<!-- ---
+---
 layout: post
-date: 2023-09-22 
 inline: true
 ---
 
-Check out my tutorial (together with Luis Galárraga
-) on [Explainable GraphML](https://drive.google.com/file/d/1ItLOrxbC5SkP2BF4kkc_m7R55GMmkNfd/view) presented at ECML 2023 -->
+🎉 New paper: **Disentangled and Self-Explainable Node Representation Learning** recently published at TMLR 2025—a method for constructing interpretable, disentangled node embeddings with built-in explanations.
+**Read on OpenReview:** https://openreview.net/forum?id=syMZF5fc8y
