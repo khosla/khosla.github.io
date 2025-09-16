@@ -1,19 +1,17 @@
 ---
-layout: blog
-title: blog
+layout: default
+title: Blog
+permalink: /blog/
 pagination:
   enabled: true
   collection: posts
-  permalink: /page/:num/
   per_page: 3
+  permalink: /page/:num/
   sort_field: date
   sort_reverse: true
-  trail:
-    before: 1 # The number of links before the current page
-    after: 3  # The number of links after the current page
 ---
 
-<!--
+
 <div class="post">
 
   <div class="header-bar">
@@ -70,4 +68,3 @@ pagination:
   {% include pagination.html %}
 
 </div>
-!>
