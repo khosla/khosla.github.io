@@ -5,18 +5,17 @@ date: 2025-09-16
 tags: [graph learning, interpretability, disentanglement, GNN]
 # image: /assets/images/hero-2400.jpg   # (optional thumbnail if you want)
 ---
-
-TL;DR. Instead of learning black-box node vectors and bolting on post-hoc explainers, DiSeNE learns unsupervised embeddings whose dimensions are interpretable by design: each dimension maps to a concrete mesoscale substructure (e.g., an anchor/community) in the graph. You get dimension-wise explanations, competitive utility, and a clean way to tease apart structure from node features.
+> **TL;DR** — Instead of learning black-box node vectors and employing post-hoc explainers, **DiSeNE** learns **unsupervised embeddings whose dimensions are interpretable by design**: each dimension maps to a concrete **mesoscale substructure** (e.g., an anchor/community) in the graph. You get **dimension-wise explanations**, competitive utility, and a clean way to tease apart **structure** from **node features**.
 <!--more-->
 
-##What is the problem with “explain the GNN after the fact”
+## What is the problem with “explain the GNN after the fact”
 
 End-to-end GNNs mix structure and features during message passing: many different combinations of neighborhoods and attributes can yield the same prediction, so post-hoc attributions lead to multiple plausible explanations. DiSeNE sidesteps this by separating concerns: it learns structural factors first—one per dimension—so you can study what the graph alone contributes before adding metadata.
 
 ## Key Idea
-DiSeNE jointly optimizes three goals: connectivity preservation (a random-walk/skip-gram objective), dimensional interpretability (each dimension “explains” edges via a subgraph), and structural disentanglement (dimensions capture distinct structures). A light entropy regularizer prevents empty/degenerate dimensions. Crucially, a node’s coordinate on a dimension grows with its proximity to that dimension’s explanation subgraph—so the magnitude itself is meaningful.
+DiSeNE jointly optimizes three goals: connectivity preservation (a random-walk/skip-gram objective), dimensional interpretability (each dimension “explains” edges via a subgraph), and structural disentanglement (dimensions capture distinct structures). A light entropy regularizer prevents empty/degenerate dimensions. 
 
-**Why this matters. Each coordinate now has a reason (“close to subgraph Sₖ”), not just a number that happens to work in a downstream task. That makes the embedding space auditable and easy to discuss with domain experts
+> **Why this matters.** Each coordinate now has a reason (“close to subgraph Sₖ”), not just a number that happens to work in a downstream task. That makes the embedding space auditable and easy to discuss with domain experts
 
 
 ## Measuring interpretability (not just accuracy)
