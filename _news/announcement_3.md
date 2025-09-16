@@ -1,7 +1,10 @@
-<!-- ---
+---
 layout: post
-date: 2023-07-13
 inline: true
 ---
 
-My first PhD student **Ngan Thi Dong** defended her PhD thesis on [Joint learning from multiple information sources for biological problems](https://www.repo.uni-hannover.de/bitstream/handle/123456789/14261/Dong_Thi_Ngan_2023.pdf?sequence=3&isAllowed=y) Check out her amazing work! -->
+🎉 **New preprint:** *Population-Scale Network Embeddings Expose Educational Divides in Network Structure Related to Right-Wing Populist Voting* (arXiv 2025).  We embed the entire Dutch population across neighborhood, work, family, household, and school contexts, and uncovering education-linked structural differences associated with right-wing populist voting using the [dimensional interpretability of node embeddings](https://ieeexplore.ieee.org/abstract/document/10591463). 👉 https://arxiv.org/abs/2508.21236
+
+
+
+
