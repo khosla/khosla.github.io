@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://khosla.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://khosla.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-09-17T06:13:16+00:00</updated><id>https://khosla.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">Disentangled &amp;amp; Self-Explainable Node Embeddings (DiSeNE): a quick tour</title><link href="https://khosla.github.io/blog/2025/disene-explainable-node-embeddings/" rel="alternate" type="text/html" title="Disentangled &amp;amp; Self-Explainable Node Embeddings (DiSeNE): a quick tour" /><published>2025-09-16T00:00:00+00:00</published><updated>2025-09-16T00:00:00+00:00</updated><id>https://khosla.github.io/blog/2025/disene-explainable-node-embeddings</id><content type="html" xml:base="https://khosla.github.io/blog/2025/disene-explainable-node-embeddings/"><![CDATA[<blockquote>
+  <p><strong>TL;DR</strong> — Instead of learning black-box node vectors and employing post-hoc explainers, <strong>DiSeNE</strong> learns <strong>unsupervised embeddings whose dimensions are interpretable by design</strong>: each dimension maps to a concrete <strong>mesoscale substructure</strong> (e.g., an anchor/community) in the graph. You get <strong>dimension-wise explanations</strong>, competitive utility, and a clean way to tease apart <strong>structure</strong> from <strong>node features</strong>.
+Check out our paper at https://openreview.net/pdf?id=s51TQ8Eg1e
+<!--more--></p>
+</blockquote>
+
+<h2 id="what-is-the-problem-with-explain-the-gnn-after-the-fact">What is the problem with “explain the GNN after the fact”</h2>
+
+<p>End-to-end GNNs mix structure and features during message passing: many different combinations of neighborhoods and attributes can yield the same prediction, so post-hoc attributions lead to multiple plausible explanations. DiSeNE sidesteps this by separating concerns: it learns structural factors first—one per dimension—so you can study what the graph alone contributes before adding metadata.</p>
+
+<h2 id="key-idea">Key Idea</h2>
+<p>DiSeNE jointly optimizes three goals: connectivity preservation (a random-walk/skip-gram objective), dimensional interpretability (each dimension “explains” edges via a subgraph), and structural disentanglement (dimensions capture distinct structures). A light entropy regularizer prevents empty/degenerate dimensions.</p>
+
+<blockquote>
+  <p><strong>Why this matters.</strong> Each coordinate now has a reason (“close to subgraph Sₖ”), not just a number that happens to work in a downstream task. That makes the embedding space auditable and easy to discuss with domain experts</p>
+</blockquote>
+
+<h2 id="measuring-interpretability-not-just-accuracy">Measuring interpretability (not just accuracy)</h2>
+<p>The paper proposes new task-agnostic metrics for self-explainable embeddings, including Topological Alignment (do per-dimension explanation masks align with human-interpretable structures like communities?), Overlap Consistency (do overlaps between explanation subgraphs match correlations between dimensions?), and Positional Coherence (do higher coordinate values mean closer to the subgraph?).</p>
+
+<!-- ## How it works (intuitively)
+- Train an unsupervised encoder (skip-gram/random-walk style) for embeddings.  
+- Jointly learn a mapping **dimension → subgraph (anchor set)** and regularize for sparsity/distinctness so dimensions don’t collapse or overlap.  
+- Explanations are **mesoscale**: beyond tiny local neighborhoods, but still concrete and inspectable.
+
+## Making “explainable” measurable
+DiSeNE introduces criteria to score interpretability, including **sparsity & comprehensibility** of dimension subgraphs, **overlap consistency** across dimensions, and **positional coherence** (higher coordinate ↔ closer to the associated subgraph).
+
+## Where this helps
+- **Trustworthy analytics:** point to the precise structure/anchors driving predictions.  
+- **Auditable features:** treat dimensions as **concept features** in regulated pipelines.  
+- **Exploratory mining:** surface cohesive modules or cross-community bridges you can visualize with domain experts. -->
+
+<!-- ## Try it yourself (minimal workflow)
+1) Compute DiSeNE embeddings **Z**.  
+2) Build three models: **Z only**, **X (attributes) only**, **[X; Z]** combined.  
+3) Use an **interpretable-by-design** learner (L1-logistic, EBM/GAM, shallow tree) to read off which **dimensions (structure)** and **attributes (metadata)** matter—and how. -->]]></content><author><name></name></author><category term="graph learning" /><category term="interpretability" /><category term="disentanglement" /><category term="GNN" /><summary type="html"><![CDATA[TL;DR — Instead of learning black-box node vectors and employing post-hoc explainers, DiSeNE learns unsupervised embeddings whose dimensions are interpretable by design: each dimension maps to a concrete mesoscale substructure (e.g., an anchor/community) in the graph. You get dimension-wise explanations, competitive utility, and a clean way to tease apart structure from node features. Check out our paper at https://openreview.net/pdf?id=s51TQ8Eg1e]]></summary></entry></feed>
