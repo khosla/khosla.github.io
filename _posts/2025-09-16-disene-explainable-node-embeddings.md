@@ -6,6 +6,7 @@ tags: [graph learning, interpretability, disentanglement, GNN]
 # image: /assets/images/hero-2400.jpg   # (optional thumbnail if you want)
 ---
 > **TL;DR** — Instead of learning black-box node vectors and employing post-hoc explainers, **DiSeNE** learns **unsupervised embeddings whose dimensions are interpretable by design**: each dimension maps to a concrete **mesoscale substructure** (e.g., an anchor/community) in the graph. You get **dimension-wise explanations**, competitive utility, and a clean way to tease apart **structure** from **node features**.
+Check out our paper at https://openreview.net/pdf?id=s51TQ8Eg1e
 <!--more-->
 
 ## What is the problem with “explain the GNN after the fact”
