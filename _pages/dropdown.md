@@ -5,61 +5,82 @@ permalink: /students/
 description: PhD and Masters students
 nav: true
 ---
-# Current PhD students
-<div class="row mt-4">
-  <div class="col-sm-2">
-    {% include figure.html path="assets/img/tianqi.jpg" title="Tianqi Zhao" class="img-fluid rounded z-depth-1" %}
+<div class="student-page">
+  <h2>Current PhD Students</h2>
+  <div class="student-grid">
+    <div class="student-card">
+      <div class="student-photo">
+        {% include figure.html path="assets/img/hanwen.png" alt="Hanwen Ge" title="Hanwen Ge" class="img-fluid rounded z-depth-1 student-avatar" %}
+      </div>
+      <div class="student-meta">
+        <h3>Hanwen Ge</h3>
+        <p class="student-status">Starting June 2026</p>
+        <p class="student-topic"><strong>Topic:</strong> Explainability for Decision Support Supported by PriXAI</p>
+      </div>
+    </div>
+
+    <div class="student-card">
+      <div class="student-photo">
+        {% include figure.html path="assets/img/yuan.jpg" alt="Yuan Xue" title="Yuan Xue" class="img-fluid rounded z-depth-1 student-avatar" %}
+      </div>
+      <div class="student-meta">
+        <h3>Yuan Xue</h3>
+        <p class="student-topic"><strong>Topic:</strong> Accelerating Deep RL</p>
+        <p class="student-summary">Yuan studies more efficient deep reinforcement learning, including graph-based abstractions for improving sample efficiency.</p>
+      </div>
+    </div>
   </div>
-  <div class="col-sm-8">
-    <strong>Tianqi Zhao</strong><br>
-    <em>Topic:</em> Assessing Graph Machine Learning Through the Lens of Data and Task Complexity<br>
-    Tianqi’s research critically assesses advancements in graph machine learning by developing methods to characterize data and task complexity. Her approach aims to identify the inherent challenges in graph-structured data, providing a deeper understanding of model robustness and reliability across diverse applications. 
+
+  <h2>Graduated PhD Students</h2>
+  <div class="student-grid">
+    <div class="student-card">
+      <div class="student-photo">
+        {% include figure.html path="assets/img/tianqi.jpg" alt="Tianqi Zhao" title="Tianqi Zhao" class="img-fluid rounded z-depth-1 student-avatar" %}
+      </div>
+      <div class="student-meta">
+        <h3>Tianqi Zhao</h3>
+        <p class="student-status">Graduated May 2026</p>
+        <p class="student-topic"><strong>Topic:</strong> Characterizing Learning Difficulty in Graph-Structured Data</p>
+        <p class="student-summary">Tianqi’s PhD examined how data and task complexity shape learning on graph-structured data, with a focus on robustness and reliability.</p>
+      </div>
+    </div>
+
+    <div class="student-card">
+      <div class="student-photo">
+        {% include figure.html path="assets/img/emmanuel.png" alt="Emmanuel Iyiola Olatunji" title="Emmanuel Iyiola Olatunji" class="img-fluid rounded z-depth-1 student-avatar" %}
+      </div>
+      <div class="student-meta">
+        <h3>Emmanuel Iyiola Olatunji</h3>
+        <p class="student-status">Graduated July 2024</p>
+        <p class="student-topic"><strong>Topic:</strong> Privacy-Preserving Graph Machine Learning</p>
+        <p class="student-summary">Emmanuel studied privacy risks in graph learning and developed methods to quantify and mitigate them under privacy guarantees.</p>
+      </div>
+    </div>
+
+    <div class="student-card">
+      <div class="student-photo">
+        {% include figure.html path="assets/img/ngan.jpeg" alt="Ngan Thi Dong" title="Ngan Thi Dong" class="img-fluid rounded z-depth-1 student-avatar" %}
+      </div>
+      <div class="student-meta">
+        <h3>Ngan Thi Dong</h3>
+        <p class="student-status">Graduated July 2023</p>
+        <p class="student-topic"><strong>Topic:</strong> Joint Learning from Multiple Information Sources for Biological Problems</p>
+        <p class="student-summary">Ngan developed methods for learning jointly from omics, clinical, and biological network data to improve generalization in biomedical settings.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Master's Students (at TU Delft)</h2>
+  <div class="student-list-columns">
+    <ul>
+      <li><strong>Yang Li Li</strong><span>GNN-LLM Hybrids for Multi-Label Node Classification</span></li>
+      <li><strong>Kanta Tanahashi</strong><span>Self-Supervised Learning for Privacy-Preserving GNNs</span></li>
+      <li><strong>Alex Lalov</strong><span>Generative AI for Biomedical Relational Data Generation and Imputation</span></li>
+      <li><strong>Jorden van Schijndel</strong><span>Process-Aware Graphs as Safety Mechanisms for AI</span></li>
+      <li><strong>Nicolas Perez Zambrano</strong><span>Explainable Graph Learning in Biomedicine</span></li>
+      <li><strong>Shuang Liu</strong><span>Explainability in Knowledge Graph-Based Recommender Systems</span></li>
+      <li><strong>Yuchuan Fu</strong><span>Explaining Link Prediction in GNNs</span></li>
+      <li><strong>Ellemijn Vernhout</strong><span>LLM Support for Advance Care Planning</span></li>
+    </ul>
   </div>
 </div>
-
-<div class="row mt-4">
-  <div class="col-sm-2">
-    {% include figure.html path="assets/img/yuan.jpg" title="Yuan Xue" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-8">
-    <strong>Yuan Xue</strong><br>
-    <em>Topic: Accelerating Deep RL </em> <br>
-    Yuan focuses on improving efficiency of deep RL algorithms.
-    For example in <a href="https://link.springer.com/article/10.1007/s00521-023-08211-x" target="_blank" rel="noopener">this paper</a>  he addresses sample inefficiency by automatically constructing abstract Markov decision processes (AMDPs) using graph representation learning.
-
-  </div>
-</div>
-# Graduated PhD students
-<div class="row mt-4">
-  <div class="col-sm-2">
-    {% include figure.html path="assets/img/ngan.jpeg" title="Ngan Thi Dong" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-8">
-     <strong>Ngan Thi Dong</strong> (Graduated July 2023)<br>
-    <em>Topic:</em> Joint learning from multiple information sources for biological problems<br>
-    To address the challenges of data scarcity and noise that hinder generalizable learning from biomedical data, Ngan developed machine learning algorithms capable of learning jointly from diverse data sources, including <em>omics data, clinical data, and biological interaction networks</em>. 
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-sm-2">
-    {% include figure.html path="assets/img/emmanuel.png" title="Emmanuel Iyiola Olatunji" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-8">
-    <strong>Emmanuel Iyiola Olatunji</strong> (Graduated July 2024)<br>
-    <em>Topic:</em> Privacy Preserving Graph Machine Learning<br>
-    Emmanuel studied privacy implications of graph machine learning. He developed methods for quantifying privacy risks as well as preserving privacy in graph machine learning. 
-  </div>
-</div>
-
-
-
----
-
-# 🎓 Master's Students
-
-<ul>
-  <li>Yang Li Li (Topic: GNN-LLM Hybrids for Multi-Label Node Classification) </li>
-  <li>Kanta Tanahashi (Topic: Self-supervised learning for privacy preserving GNNs)</li>
-  <li>Ellemijn Vernhout</li>
-</ul>
