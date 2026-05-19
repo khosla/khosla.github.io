@@ -15,8 +15,9 @@ The initiative brings together researchers and practitioners to work on topics s
 
 **Core Team**
 
-* Megha Khosla (Coordinator, TU Delft EEMCS)
-* Masoud Mansoury (Coordinator, TU Delft EEMCS)
-* Helma Torkamaan (Coordinator, TU Delft TPM)
+* Megha Khosla (EEMCS)
+* Masoud Mansoury (EEMCS)
+* Helma Torkamaan (TPM)
+* Yanan Xin (Civil Engineering and Geosciences)
 
 More information is available on the [SIG-AI-ACT website](https://sig-ai-act.github.io/).
